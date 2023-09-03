@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/august_project/cd_job_pet-clinic.git
+    repoURL: https://gitlab.com/jmd-august/jmd-cd.git
     targetRevision: HEAD # Means always consider last commit in this repository
     path: k8s
   destination: 
