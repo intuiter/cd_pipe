@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: petclinic-g
-          image: shivanishivani/clinic09:"${IMAGE_TAG}"
+          image: shivanishivani/clinic09:28
           ports:
             - containerPort: 8080
           env:
