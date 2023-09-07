@@ -10,7 +10,7 @@ pipeline {
             }
 
     stages {
-        stage ('Updating Kubernetes deployment file') {
+        stage ('Updating Kubernetes deployment file2') {
             steps {  
                 echo 'updating app-deploy.yaml file' 
                 script {
