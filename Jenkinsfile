@@ -8,7 +8,7 @@ pipeline {
                 APP_NAME = "953423807780.dkr.ecr.us-east-2.amazonaws.com/pc-ecr"
 
             }
-
+   //sed -i 's@${APP_NAME}@${APP_NAME}:${IMAGE_TAG}/g' app-deploy.yaml
     stages {
         stage ('Updating Kubernetes deployment file2') {
             steps {  
@@ -17,7 +17,7 @@ pipeline {
                         dir ('k8s') {
                         sh """
                         cat app-deploy.yaml
-                        sed -i 's@${APP_NAME}@${APP_NAME}:${IMAGE_TAG}/g' app-deploy.yaml
+                        sed -e 's,CUSTOM_IMAGE,'${APP_NAME}:${IMAGE_TAG}',g' < app-deploy.yaml   
                         cat app-deploy.yaml
                         """
                     }
