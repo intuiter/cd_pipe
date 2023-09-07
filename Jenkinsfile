@@ -17,13 +17,14 @@ pipeline {
                         dir ('k8s') {
                         sh """
                         cat app-deploy.yaml
-                        sed -e 's,CUSTOM_IMAGE,'${APP_NAME}:${IMAGE_TAG}',g' < app-deploy.yaml   
+                        sed -i 's,CUSTOM_IMAGE,'${APP_NAME}:${IMAGE_TAG}',g' < app-deploy.yaml   
                         cat app-deploy.yaml
                         """
                     }
                 }
             } 
         }
+        //sh "git push origin HEAD:master"
         stage ('Push the changed deployment file to Git') {
             steps {  
                 echo 'Pushing changed files to Git' 
@@ -37,7 +38,7 @@ pipeline {
                         """
                         withCredentials([gitUsernamePassword(credentialsId: 'gitlab-creds', gitToolName: 'Default')])
                             {
-                           sh "git push origin HEAD:master" 
+                           sh "git push" 
                         }
                     }
                 }
