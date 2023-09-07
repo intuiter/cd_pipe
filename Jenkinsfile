@@ -18,7 +18,7 @@ pipeline {
                         sh """
                         cat app-deploy.yaml
                         
-                        sed -ri 's/^(\s*)(image\s*:\s*${APP_NAME}\s*$)/\1image: ${IMAGE_TAG}/' app-deploy.yaml
+                        sed -i 's/${APP_NAME}/${APP_NAME}:${IMAGE_TAG}/g' app-deploy.yaml
                         cat app-deploy.yaml
                         """
                     }
