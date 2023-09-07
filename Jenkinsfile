@@ -33,7 +33,7 @@ pipeline {
                         sh """
                         git config --global user.name "Dinesh Aleti"
                         git config --global user.email "dinesh.semac9@gmail.com"
-                        git add .
+                        git add app-deploy.yaml
                         git commit -m "updated the deployment file"
                         """
                         withCredentials([gitUsernamePassword(credentialsId: 'gitlab-creds', gitToolName: 'Default')])
