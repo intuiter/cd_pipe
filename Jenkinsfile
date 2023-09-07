@@ -5,7 +5,7 @@ pipeline {
                 // AWS_ACCESS_KEY_ID = credentials('jenkins-aws-access-key-id')
                 // AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
                 // DOCKERHUB_USERNAME = "shivanishivani"
-                APP_NAME = "clinic09"
+                APP_NAME = "953423807780.dkr.ecr.us-east-2.amazonaws.com/pc-ecr"
 
             }
 
