@@ -14,7 +14,11 @@ spec:
     spec:
       containers:
         - name: petclinic-g
+<<<<<<< HEAD
           image: 953423807780.dkr.ecr.us-east-2.amazonaws.com/pc-ecr:"${IMAGE_TAG}"
+=======
+          image: shivanishivani/clinic09:29
+>>>>>>> 5b2ba3911fb3e7ce284a7890e2b9b6f3f94075e5
           ports:
             - containerPort: 8080
           env:
