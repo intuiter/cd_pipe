@@ -9,6 +9,7 @@ pipeline {
 
             }
    //sed -i 's@${APP_NAME}@${APP_NAME}:${IMAGE_TAG}/g' app-deploy.yaml
+   // This was working       sed -e "s,CUSTOM_IMAGE,'${APP_NAME}:${IMAGE_TAG}',g" < app-deploy.yaml
     stages {
         stage ('Updating Kubernetes deployment file2') {
             steps {  
@@ -17,7 +18,7 @@ pipeline {
                         dir ('k8s') {
                         sh """
                         cat app-deploy.yaml
-                        sed -e "s,CUSTOM_IMAGE,'${APP_NAME}:${IMAGE_TAG}',g" < app-deploy.yaml   
+                        sed -e "s,${APP_NAME},'${APP_NAME}:${IMAGE_TAG}',g" < app-deploy.yaml   
                         cat app-deploy.yaml
                         """
                     }
@@ -31,6 +32,7 @@ pipeline {
                 script {
                         dir ('k8s') {
                         sh """
+                        touch samplefile.txt
                         git config --global user.name "Dinesh Aleti"
                         git config --global user.email "dinesh.semac9@gmail.com"
                         git add app-deploy.yaml
