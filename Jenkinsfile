@@ -22,7 +22,7 @@ pipeline {
                         dir ('k8s') {
                         sh """
                         cat app-deploy.yaml
-                        sed -i "s/pc-ecr/pc-ecr:${IMAGE_TAG}/g" app-deploy.yaml  
+                        sed -i "s/pc-ecr.*/pc-ecr:${IMAGE_TAG}/g" app-deploy.yaml  
                         cat app-deploy.yaml
                         """
                     }
