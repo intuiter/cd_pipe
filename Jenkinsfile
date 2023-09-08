@@ -26,7 +26,7 @@ pipeline {
             } 
         }
         //sh "git push origin HEAD:master"
-        stage ('Push the changed deployment file to Git') {
+        stage ('Push the changed deployment yaml file to Git') {
             steps {  
                 echo 'Pushing changed files to Git' 
                 script {
