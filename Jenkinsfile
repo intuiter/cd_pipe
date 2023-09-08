@@ -19,7 +19,7 @@ pipeline {
                         dir ('k8s') {
                         sh """
                         cat app-deploy.yaml
-                        yq -i -y '.containers.image = "${APP_NAME}:${IMAGE_TAG}"' app-deploy.yaml   
+                        jq -i -y '.containers.image = "${APP_NAME}:${IMAGE_TAG}"' app-deploy.yaml   
                         cat app-deploy.yaml
                         """
                     }
