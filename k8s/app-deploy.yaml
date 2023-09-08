@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: petclinic-g
-          image: 'CUSTOM_IMAGE'
+          image: CUSTOM_IMAGE
           ports:
             - containerPort: 8080
           env:
