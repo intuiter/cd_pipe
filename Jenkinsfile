@@ -45,7 +45,7 @@ pipeline {
                         """
                         withCredentials([gitUsernamePassword(credentialsId: 'gitlab-creds', gitToolName: 'Default')])
                             {
-                           sh "git push" 
+                           sh "git push origin HEAD:master" 
                         }
                     }
                 }
