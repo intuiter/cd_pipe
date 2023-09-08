@@ -11,6 +11,7 @@ pipeline {
    //sed -i 's@${APP_NAME}@${APP_NAME}:${IMAGE_TAG}/g' app-deploy.yaml
    // This was working       sed -e "s,CUSTOM_IMAGE,'${APP_NAME}:${IMAGE_TAG}',g" < app-deploy.yaml
    // sed -i "s/${APP_NAME}/${APP_NAME}:${IMAGE_TAG},g" < app-deploy.yaml
+   // sh ("sed -e 's/image:${APP_NAME}/image:${APP_NAME}:${IMAGE_TAG}/' app-deploy.yaml")
     stages {
         // stage ('Updating Kubernetes deployment file2') {
         //     steps {  
@@ -31,7 +32,7 @@ pipeline {
                 echo 'updating app-deploy.yaml file' 
                 script {
                         dir ('k8s') {
-                        sh ("sed -e 's/image:${APP_NAME}/image:${APP_NAME}:${IMAGE_TAG}/' app-deploy.yaml")          
+                        sh ("sed 's!image:${APP_NAME}!image:${APP_NAME}:${IMAGE_TAG}!' app-deploy.yaml")          
                     }
                 }
             } 
