@@ -32,7 +32,9 @@ pipeline {
                 echo 'updating app-deploy.yaml file' 
                 script {
                         dir ('k8s') {
-                        sh ("sed 's!image:${APP_NAME}!image:${APP_NAME}:${IMAGE_TAG}!' app-deploy.yaml")          
+                        sh ("cat app-deploy.yaml")    
+                        sh ("sed 's!image:${APP_NAME}!image:${APP_NAME}:${IMAGE_TAG}!' app-deploy.yaml")
+                        sh ("cat app-deploy.yaml")           
                     }
                 }
             } 
