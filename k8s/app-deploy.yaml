@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: petclinic-g
-  replicas: 8
+  replicas: 4
   template:
     metadata:
       labels:
