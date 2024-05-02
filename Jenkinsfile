@@ -29,8 +29,8 @@ pipeline {
                         dir ('k8s') {
                         sh """
                         touch samplefile.txt
-                        git config --global user.name "Dinesh Aleti"
-                        git config --global user.email "dinesh.semac9@gmail.com"
+                        git config --global user.name "intuiter"
+                        git config --global user.email "medha.reddy.1044@gmail.com"
                         git add .
                         git commit -m "updated the deployment file"
                         """
