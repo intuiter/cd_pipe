@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-                APP_NAME = "953423807780.dkr.ecr.us-east-2.amazonaws.com/pc-ecr"
+                APP_NAME = "818104450483.dkr.ecr.us-east-1.amazonaws.com//pc-ecr"
             }
 
     stages {
@@ -34,7 +34,7 @@ pipeline {
                         git add .
                         git commit -m "updated the deployment file"
                         """
-                        withCredentials([gitUsernamePassword(credentialsId: 'gitlab-creds', gitToolName: 'Default')])
+                        withCredentials([gitUsernamePassword(credentialsId: 'github-token', gitToolName: 'Default')])
                             {
                            sh "git push origin HEAD:master" 
                         }

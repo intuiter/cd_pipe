@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://gitlab.com/jmd-august/jmd-cd.git
+    repoURL: https://github.com/intuiter/cd_pipeline.git
     targetRevision: HEAD # Means always consider last commit in this repository
     path: k8s
   destination: 
