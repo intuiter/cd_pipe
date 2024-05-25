@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
     - protocol: "TCP"
-      port: 8080    # Port inside the cluster
+      port: 9090    # Port inside the cluster
       targetPort:   # Port exposed to the outside
   selector:
     app: petclinic-g

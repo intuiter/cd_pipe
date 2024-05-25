@@ -34,7 +34,7 @@ pipeline {
                         git add .
                         git commit -m "updated the deployment file"
                         """
-                        withCredentials([gitUsernamePassword(credentialsId: 'github-token', gitToolName: 'Default')])
+                        withCredentials([gitUsernamePassword(credentialsId: 'github-cred', gitToolName: 'Default')])
                             {
                            sh "git push origin HEAD:master" 
                         }
