@@ -11,10 +11,10 @@ spec:
     metadata:
       labels:
         app: petclinic-g
-    spec:
+    spec:   
       containers:
         - name: petclinic-g
-          image: 953423807780.dkr.ecr.us-east-2.amazonaws.com/pc-ecr:99
+          image: 818104450483.dkr.ecr.us-east-1.amazonaws.com//pc-ecr:99
           ports:
             - containerPort: 8080
           env:
