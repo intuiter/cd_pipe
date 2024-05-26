@@ -26,6 +26,7 @@ pipeline {
             environment {
             GIT_REPO_NAME = "cd_pipeline"
             GIT_USER_NAME = "intuiter"
+            }
             steps {  
                 echo 'Pushing changed files to Git' 
                 script {
