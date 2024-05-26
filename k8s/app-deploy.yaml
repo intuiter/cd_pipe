@@ -14,7 +14,7 @@ spec:
     spec:   
       containers:
         - name: petclinic-g
-          image: 818104450483.dkr.ecr.us-east-1.amazonaws.com//pc-ecr:${IMAGE_TAG}
+          image: 818104450483.dkr.ecr.us-east-1.amazonaws.com//pc-ecr:replaceImagetag
           ports:
             - containerPort: 9090
           env:
