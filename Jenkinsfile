@@ -38,9 +38,9 @@ pipeline {
                         git add .
                         git commit -m "updated the deployment file"
                         """
-                        withCredentials([string(credentialsId: 'githubcred', variable: 'GIHUB_VALUE')])
+                        withCredentials([string(credentialsId: 'github-cred', variable: 'GIHUB_VALUE')])
                             {
-                        sh "git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master" 
+                        sh "git push https://${GITHUB_VALUE}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master" 
                         }
                     }
                 }
