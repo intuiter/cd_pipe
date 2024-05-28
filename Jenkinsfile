@@ -25,7 +25,7 @@ pipeline {
         stage ('Push the changed deployment yaml file to Git') {
             environment {
             GIT_REPO_NAME = "cd_pipeline"
-            GIT_USER_NAME = "intuiter"
+            GIT_USER_NAME = "Medha P"
             }
             steps {  
                 echo 'Pushing changed files to Git' 
