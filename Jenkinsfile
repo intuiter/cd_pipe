@@ -23,10 +23,7 @@ pipeline {
         
         
         stage ('Push the changed deployment yaml file to Git') {
-            environment {
-            GIT_REPO_NAME = "cd_pipeline"
-            GIT_USER_NAME = "Medha P"
-            }
+
             steps {  
                 echo 'Pushing changed files to Git' 
                 script {
@@ -38,9 +35,9 @@ pipeline {
                         git add .
                         git commit -m "updated the deployment file"
                         """
-                        withCredentials([UsernamePassword(credentialsId: 'github-cred', variable: 'GITHUB_TOKEN')]) {
-                        sh 'git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master' 
-                        }
+                        withCredentials([gitUsernamePassword(credentialsId: 'github-cred', gitToolName: 'Default')]) {
+                        sh "git push origin HEAD:master"
+                        } 
                     }
                 }
             } 
