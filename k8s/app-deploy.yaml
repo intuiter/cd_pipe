@@ -16,7 +16,7 @@ spec:
         - name: petclinic-g
           image: 818104450483.dkr.ecr.us-east-1.amazonaws.com//pc-ecr:replaceImagetag
           ports:
-            - containerPort: 8080
+            - containerPort: 9090
           env:
             - name: MYSQL_URL
               valueFrom :
