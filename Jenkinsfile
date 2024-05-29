@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-                APP_NAME = "818104450483.dkr.ecr.us-east-1.amazonaws.com//pc-ecr"
+                APP_NAME = "818104450483.dkr.ecr.us-east-1.amazonaws.com/pc-ecr"
             }
 
     stages {
