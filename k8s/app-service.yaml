@@ -5,8 +5,8 @@ metadata:
 spec:
   ports:
     - protocol: "TCP"
-      port: 8080   # Port inside the cluster
-      targetPort:  # Port exposed to the outside
+      port: 80   # Port inside the cluster
+      targetPort: 8080 # Port exposed to the outside
   selector:
     app: petclinic-g
-  type: LoadBalancer
+  type: Nodeport
