@@ -9,4 +9,4 @@ spec:
       targetPort: 8080 # Port exposed to the outside
   selector:
     app: petclinic-g
-  type: Nodeport
+  type: NodePort
